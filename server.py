@@ -161,3 +161,6 @@ def lights():
         b.set_light(lightsDict["overhead1"], command)
         b.set_light(lightsDict["overhead2"], command)
         b.set_light(lightsDict["lamp"], command)
+
+if __name__ == '__main__':
+    app.run()
