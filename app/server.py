@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, make_response, request
-from app import app
+from app import flaskapp
 from phue import Bridge
 import forecastio
 import json
@@ -20,11 +20,11 @@ lng = -80.537
 
 #chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
-@app.route('/')
+@flaskapp.route('/')
 def hello():
     return "Hello World!"
 
-@app.route('/weather')
+@flaskapp.route('/weather')
 def weather():
     forecast = forecastio.load_forecast(api_key, lat, lng)
     response = {
@@ -44,7 +44,7 @@ def weather():
             
     return json.dumps(response)
 
-@app.route('/lightTypes')
+@flaskapp.route('/lightTypes')
 def lightTypes():
     response = {
         "studyMode": {
@@ -161,5 +161,5 @@ def lightTypes():
 #         b.set_light(lightsDict["overhead2"], command)
 #         b.set_light(lightsDict["lamp"], command)
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
