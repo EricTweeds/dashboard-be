@@ -1,7 +1,5 @@
 from flask import Flask
 
-flaskApp = Flask(__name__)
+flaskapp = Flask(__name__)
 
 from app import server
-
-app.run(debug=True)
