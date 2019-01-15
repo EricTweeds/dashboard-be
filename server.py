@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, make_response, request
+from app import app
 from phue import Bridge
 import forecastio
 import json
@@ -18,8 +19,6 @@ lat = 43.477
 lng = -80.537
 
 #chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
-
-app = Flask(__name__)
 
 @app.route('/')
 def hello():
