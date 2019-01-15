@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, make_response, request
 from app import flaskapp
+from flask_cors import CORS
 from phue import Bridge
 import forecastio
 import json
@@ -19,6 +20,8 @@ lat = 43.477
 lng = -80.537
 
 #chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+
+CORS(flaskapp)
 
 @flaskapp.route('/')
 def hello():
